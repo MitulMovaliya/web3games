@@ -7,7 +7,7 @@ const inter = Manrope({
 });
 
 export const metadata = {
-  title: "Web3Games",
+  title: "M2P Esports",
   description: "",
 };
 
