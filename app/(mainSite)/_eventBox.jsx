@@ -1,29 +1,34 @@
 import Image from "next/image";
 
 export function EventBox({ data }) {
-  console.log(data);
   const imageStyle = {
-    maxWidth: "400px",
+    maxWidth: "100%", // Ensure the image scales appropriately on smaller screens
   };
   return (
-    <div className="mt-5 mb-5 flex box-border items-center rounded-xl p-[40px] bg-[#191919]">
+    <div className="mt-5 mb-5 flex flex-col md:flex-row box-border items-center rounded-xl p-4 md:p-[40px] bg-[#191919]">
       <div className="">
         <Image
           className="rounded-xl"
           src={data.imageLink}
-          width={400}
-          height={400}
+          width={600}
+          height={600}
           alt={data.EventName}
           style={imageStyle}
-        ></Image>
+        />
       </div>
-      <div className="ml-[40px] flex flex-col ">
-        <div className="text-[32px] font-extrabold">{data.EventName}</div>
-        <div className="text-[16px]">{data.EventDescription}</div>
-        <div>
+      <div className="ml-0 md:ml-[40px] mt-4 md:mt-0 flex flex-col text-center md:text-left w-full">
+        <div className="text-2xl md:text-[32px] font-extrabold">
+          {data.EventName}
+        </div>
+        <div className="mt-3 text-base md:text-[16px]">
+          {data.EventDescription}
+        </div>
+        <div className="mt-2 md:mt-0">
           <div>
-            <div className="text-[grey] mt-5 text-[14px]">Players Reg.</div>
-            <div className="text-bold text-[#FFA500] text-[16px]">
+            <div className="text-gray-500 mt-5 text-sm md:text-[14px]">
+              Players Reg.
+            </div>
+            <div className="font-bold text-[#FFA500] text-base md:text-[16px]">
               {data.EventParticipants}+
             </div>
           </div>

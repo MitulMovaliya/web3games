@@ -2,7 +2,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css"
 
 const inter = Manrope({
-  weight: '600',
+  weight: '500',
   subsets: ["latin"]
 });
 

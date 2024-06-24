@@ -1,0 +1,23 @@
+[
+    {
+        "imageLink": "/M2P_Events_1.jpg",
+        "EventName": "Battle for Rewards",
+        "EventPrize": "2000Rs",
+        "EventParticipants": "240",
+        "EventDescription": "Our recently concluded Battle for Rewards event, featuring a prize pool of ₹2000, saw participation from 240 skilled players. The event highlighted the extraordinary talent and dedication within the esports community. Stay tuned for more thrilling competitions as we continue to elevate the standards of gaming excellence!"
+    },
+    {
+        "imageLink": "/M2P_Events_2.png",
+        "EventName": "Amateur Showdown",
+        "EventPrize": "1500Rs",
+        "EventParticipants": "240",
+        "EventDescription": "The recent Amateur Showdown featured 240 talented players competing for a ₹1500 prize pool, showcasing the pinnacle of skill and passion in the esports community. Stay tuned for more gaming excellence!"
+    },
+    {
+        "imageLink": "/M2P_Events_3.png",
+        "EventName": "M2P Esports Paid Scrims",
+        "EventPrize": "20000Rs +",
+        "EventParticipants": "3000",
+        "EventDescription": "We hosted daily paid scrims with a ₹480 prize pool. Over 40 scrims were held, allowing participants to showcase their skills and connect with fellow enthusiasts. Don't miss the chance to elevate your gaming experience!"
+    }
+]

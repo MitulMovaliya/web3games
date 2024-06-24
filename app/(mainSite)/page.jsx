@@ -2,55 +2,59 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { EventBox } from "./_eventBox";
+import EventJson from "./events.json";
 
 export default function Home() {
   return (
     <>
       <section
         id="home"
-        className="top-[-100px] px-[50px] relative h-screen uppercase flex items-center justify-between"
+        className="bg-cover bg-center  top-[40px] md:top-[-100px] justify-center px-4 md:px-[50px] relative h-[50vh] md:h-screen uppercase flex flex-col md:flex-row items-center md:justify-between"
       >
-        <div className="">
-          <div className="text-[60px]">M2p esports</div>
-          <div className="text-xl">Live the Esports Dream</div>
+        <div className="text-center md:top-[0px]  md:text-left relative">
+          <div className="text-5xl tracking-wider		 text-[#1e1f22] text-outline md:text-[80px] font-semibold		">
+            M2P ESPORTS
+          </div>
+          <div className="tracking-wide	 text-lg md:text-xl md:mt-2 font-semibold	">
+            Live the Esports Dream
+          </div>
         </div>
-        <div>
-          {" "}
-          <Image src={"/logo2.png"} width={"300"} height={"300"}></Image>
+        <div className="hidden md:flex md:top-0 relative md:mt-0">
+          <Image src={"/logo2.png"} width={300} height={300} alt="M2P Logo" />
         </div>
       </section>
-      <section id="about" className="h-screen">
+      <section id="about" className="h-screen px-4 md:px-0">
         <div className="h-[130px]"></div>
-        <div className=" box-border h-[500px] rounded-xl bg-custom-gradient p-[100px] flex flex-col ">
-          <div className="text-center top-[-40px] p-1 relative rounded-xl border-[1px]	w-[100px] items-center">
+        <div className="box-border h-auto  rounded-xl bg-custom-gradient p-4 md:p-[100px] flex flex-col items-center md:items-start">
+          <div className="text-center md:top-[-40px] top-[-5px] p-1 relative rounded-xl border-[1px] w-[100px] items-center">
             About Us
           </div>
-          <div className="uppercase text-5xl mb-5 items-center">
-            M2P esports
+          <div className="uppercase text-3xl md:text-5xl mt-5 mb-5 text-center md:text-left">
+            M2P ESPORTS
           </div>
-          <div>
-            <p className="">
-              M2P ESPORTS is an Indian esports organization founded in March
-              2021 with a mission to promote esports and gaming in India. The
-              organization is focused on building a strong community of esports
-              enthusiasts in India and providing opportunities for talented
-              gamers to showcase their skills on a global stage. M2P ESPORTS is
-              an Indian esports organization founded in March 2021 with a
-              mission to promote esports and gaming in India. The organization
-              is focused on building a strong community of esports enthusiasts
-              in India and providing opportunities for talented gamers to
-              showcase their skills on a global stage. M2P ESPORTS is an Indian
-              esports organization founded in March 2021 with a mission to
-              promote esports and gaming in India. The organization is focused
-              on building a strong community of esports enthusiasts in India and
+          <div className="text-sm md:text-left text-center md:text-base">
+            <p>
+              Welcome to M2P ESPORTS, an Indian esports organization founded in
+              March 2021 with a mission to promote esports and gaming in India.
+              We focus on building a robust community of esports enthusiasts and
               providing opportunities for talented gamers to showcase their
-              skills on a global stage.
+              skills globally. <br /> <br />
+              Since our inception, we have successfully hosted two major
+              tournaments, bringing together some of the best talent in the
+              region. In addition to these large-scale events, we organize daily
+              and paid scrims, offering a competitive environment for players to
+              refine their skills and gain valuable experience.
+              <br /> <br />
+              At M2P ESPORTS, we are dedicated to fostering the growth of
+              esports in India, supporting players at all levels, and elevating
+              the gaming landscape to new heights. Join us in our journey to
+              make India a powerhouse in esports.
             </p>
           </div>
-          <div>
-            <Link href="">
+          <div className="mt-5">
+            <Link target="blank" href="https://discord.gg/FbhqQpAza7">
               <Button
-                className="hover:text-white uppercase text-s rounded text-black bg-[#cbfffb] mt-5"
+                className="hover:text-white uppercase text-s rounded text-black bg-[white]"
                 variant={"secondary"}
               >
                 Join Discord
@@ -59,30 +63,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="events" className="mt-[20px]">
-        <div className="h-[130px]"></div>
-        <div className="text-[50px]">Events</div>
-
-        <EventBox
-          data={{
-            imageLink: "/M2P_Events_1.jpg",
-            EventName: "Battle for Rewards",
-            EventPrize: "2000Rs",
-            EventParticipants: "240",
-            EventDescription:
-              "Our recently concluded event, featuring a staggering INR 15 lakhs prize pool, registered over 2,60,000 players from across India. The event showcased the pinnacle of skill and passion within the Indian esports community. Stay tuned as we continue to forge new paths in the realm of gaming excellence!",
-          }}
-        />
-        <EventBox
-          data={{
-            imageLink: "/M2P_Events_2.png",
-            EventName: "Amateur Showdown",
-            EventPrize: "1500Rs",
-            EventParticipants: "240",
-            EventDescription:
-              "Our recently concluded event, featuring a staggering INR 15 lakhs prize pool, registered over 2,60,000 players from across India. The event showcased the pinnacle of skill and passion within the Indian esports community. Stay tuned as we continue to forge new paths in the realm of gaming excellence!",
-          }}
-        />
+      <section id="events" className="px-4 md:px-0">
+        <div className="h-[50px] md:h-[130px]"></div>
+        <div className="text-3xl md:text-[50px] text-center md:text-left">
+          Events
+        </div>
+        <div>
+          {EventJson.map((item) => (
+            <EventBox data={item} />
+          ))}
+        </div>
       </section>
     </>
   );
